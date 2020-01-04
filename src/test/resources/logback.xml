@@ -4,7 +4,7 @@
 <configuration scan="true">
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
-    <logger name="bozecps.e_kanban" level="INFO"/>
+    <logger name="bozecps.viewBoard" level="INFO"/>
 
     <logger name="io.github.jhipster" level="WARN"/>
 

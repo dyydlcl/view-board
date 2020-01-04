@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bozecps.viewBoard.repository.ViewBoardStatusMapper">
+    <resultMap id="FirstResultMap" type="bozecps.viewBoard.domain.dto.ViewBoardStatusDTO">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="view_board_name" jdbcType="VARCHAR" property="viewBoardName" />
+        <result column="view_board_status_name" jdbcType="VARCHAR" property="viewBoardStatusName" />
+        <result column="current_status_quantities" jdbcType="VARCHAR" property="currentStatusQuantities" />
+    </resultMap>
+    <select id="getViewBoardStatusListByStatus" parameterType="java.util.Map" resultMap="FirstResultMap">
+        select vbs.id,vbi.view_board_name,vbsn.view_board_status_name,vbs.current_status_quantities
+        from view_board_status vbs
+        left join view_board_info vbi on vbs.view_board_info_id = vbi.id
+        left join view_board_status_name vbsn on vbsn.id = vbs.view_board_status_name_id
+        where vbs.view_board_status_name_id = #{status}
+    </select>
+</mapper>
