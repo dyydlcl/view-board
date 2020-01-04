@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "bozecps.e_kanban",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.6.0",
+    "applicationType": "microservice",
+    "baseName": "ViewBoard",
+    "packageName": "bozecps.e_kanban",
+    "packageFolder": "bozecps/e_kanban",
+    "serverPort": "8081",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mariadb",
+    "prodDatabaseType": "mariadb",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ODkzNjRhMTVmY2Q0ZjQwN2YwMTg2YTA2NWIwMzA4YmEwMjI0YzNmYjcxYTkxY2UzZGU2ZmY0ZjcyNDRhNzE5MzEwMWIwZTg5ZGYzYWRhN2JhZWJhMTlmMzUyNDM4MTg1NjhiZmFmYmE0OTA3ZTdkYmJmZmE1NDA4ODE0MjczNzI=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1578102865670,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "languages": ["en"],
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
