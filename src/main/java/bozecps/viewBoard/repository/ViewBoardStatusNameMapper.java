@@ -1,8 +1,9 @@
 package bozecps.viewBoard.repository;
 
 import bozecps.viewBoard.domain.ViewBoardStatusName;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface ViewBoardStatusNameMapper {
+public interface ViewBoardStatusNameMapper extends BaseMapper<ViewBoardStatusName> {
     int deleteByPrimaryKey(Long id);
 
     int insert(ViewBoardStatusName record);
@@ -14,4 +15,6 @@ public interface ViewBoardStatusNameMapper {
     int updateByPrimaryKeySelective(ViewBoardStatusName record);
 
     int updateByPrimaryKey(ViewBoardStatusName record);
+
+    ViewBoardStatusName selectByViewBoardStatusName(String viewBoardStatusName);
 }

@@ -11,19 +11,25 @@
     id, view_board_type, view_board_quantities, view_board_name
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from view_board_info
     where id = #{id,jdbcType=BIGINT}
   </select>
+    <select id="selectByViewBoardType" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from view_board_info
+        where view_board_type = #{viewBoardType,jdbcType=VARCHAR}
+    </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from view_board_info
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="bozecps.viewBoard.domain.ViewBoardInfo">
-    insert into view_board_info (id, view_board_type, view_board_quantities, 
+    insert into view_board_info (id, view_board_type, view_board_quantities,
       view_board_name)
-    values (#{id,jdbcType=BIGINT}, #{viewBoardType,jdbcType=VARCHAR}, #{viewBoardQuantities,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=BIGINT}, #{viewBoardType,jdbcType=VARCHAR}, #{viewBoardQuantities,jdbcType=VARCHAR},
       #{viewBoardName,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="bozecps.viewBoard.domain.ViewBoardInfo">

@@ -1,58 +1,18 @@
 package bozecps.viewBoard.domain.dto;
-
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class ViewBoardStatusDTO {
     private Long id;
-
     private String viewBoardType;
-
     private String viewBoardName;
-
     private String viewBoardStatusName;
-
     private String currentStatusQuantities;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getViewBoardType() {
-        return viewBoardType;
-    }
-
-    public void setViewBoardType(String viewBoardType) {
-        this.viewBoardType = viewBoardType;
-    }
-
-    public String getViewBoardName() {
-        return viewBoardName;
-    }
-
-    public void setViewBoardName(String viewBoardName) {
-        this.viewBoardName = viewBoardName;
-    }
-
-    public String getViewBoardStatusName() {
-        return viewBoardStatusName;
-    }
-
-    public void setViewBoardStatusName(String viewBoardStatusName) {
-        this.viewBoardStatusName = viewBoardStatusName;
-    }
-
-    public String getCurrentStatusQuantities() {
-        return currentStatusQuantities;
-    }
-
-    public void setCurrentStatusQuantities(String currentStatusQuantities) {
-        this.currentStatusQuantities = currentStatusQuantities;
-    }
 }

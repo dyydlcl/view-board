@@ -11,19 +11,36 @@
     id, view_board_info_id, view_board_status_name_id, current_status_quantities
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from view_board_status
     where id = #{id,jdbcType=BIGINT}
   </select>
+    <select id="selectByTypeAndStatusName" parameterType="bozecps.viewBoard.domain.vo.FreedViewBoardVO" resultMap="BaseResultMap">
+        select
+        vbs.*
+        from view_board_status vbs
+        left join view_board_info vbi on vbs.view_board_info_id = vbi.id
+        where vbi.view_board_type = #{freedViewBoardType,jdbcType=VARCHAR}
+            and vbs.view_board_status_name_id = #{status,jdbcType=VARCHAR}
+
+    </select>
+    <select id="selectListByTypeAndStatusName" parameterType="bozecps.viewBoard.domain.vo.FreedViewBoardVO" resultMap="BaseResultMap">
+        select
+        vbs.*
+        from view_board_status vbs
+        left join view_board_info vbi on vbs.view_board_info_id = vbi.id
+        where vbi.view_board_type = #{freedViewBoardType,jdbcType=VARCHAR}
+
+    </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from view_board_status
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="bozecps.viewBoard.domain.ViewBoardStatus">
-    insert into view_board_status (id, view_board_info_id, view_board_status_name_id, 
+    insert into view_board_status (id, view_board_info_id, view_board_status_name_id,
       current_status_quantities)
-    values (#{id,jdbcType=BIGINT}, #{viewBoardInfoId,jdbcType=BIGINT}, #{viewBoardStatusNameId,jdbcType=BIGINT}, 
+    values (#{id,jdbcType=BIGINT}, #{viewBoardInfoId,jdbcType=BIGINT}, #{viewBoardStatusNameId,jdbcType=BIGINT},
       #{currentStatusQuantities,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="bozecps.viewBoard.domain.ViewBoardStatus">

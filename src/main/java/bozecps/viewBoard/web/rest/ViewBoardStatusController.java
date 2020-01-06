@@ -21,7 +21,8 @@ public class ViewBoardStatusController {
     @Resource(name = "viewBoardStatusServiceImpl")
     private ViewBoardStatusService viewBoardStatusService;
 
-    @ApiOperation("获取看板的状态及数量")
+    @ApiOperation("0：回收，1：清洗前，2：清洗中，3：清洗后，4：超市1运输，" +
+        "5：超市2运输，6：超市1，7：超市2")
     @GetMapping("/getViewBoardStatusListByStatus")
     public JSONObject getViewBoardStatusListByStatus(@ApiParam(value = "获取特定状态下的看板",required = true) @RequestParam String status){
         Map<String,Object> map = new HashMap<>();

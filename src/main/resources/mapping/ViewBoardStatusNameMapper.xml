@@ -14,6 +14,12 @@
     from view_board_status_name
     where id = #{id,jdbcType=BIGINT}
   </select>
+    <select id="selectByViewBoardStatusName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from view_board_status_name
+        where view_board_status_name = #{viewBoardStatusName,jdbcType=VARCHAR}
+    </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from view_board_status_name
     where id = #{id,jdbcType=BIGINT}
