@@ -8,6 +8,8 @@ import lombok.Setter;
 public class ViewBoardStatusDTO {
     private Long id;
 
+    private String viewBoardType;
+
     private String viewBoardName;
 
     private String viewBoardStatusName;
@@ -20,6 +22,14 @@ public class ViewBoardStatusDTO {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getViewBoardType() {
+        return viewBoardType;
+    }
+
+    public void setViewBoardType(String viewBoardType) {
+        this.viewBoardType = viewBoardType;
     }
 
     public String getViewBoardName() {

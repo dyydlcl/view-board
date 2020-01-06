@@ -3,7 +3,7 @@ package bozecps.viewBoard.domain;
 public class ViewBoardInfo {
     private Long id;
 
-    private Byte viewBoardType;
+    private String viewBoardType;
 
     private String viewBoardQuantities;
 
@@ -17,12 +17,12 @@ public class ViewBoardInfo {
         this.id = id;
     }
 
-    public Byte getViewBoardType() {
+    public String getViewBoardType() {
         return viewBoardType;
     }
 
-    public void setViewBoardType(Byte viewBoardType) {
-        this.viewBoardType = viewBoardType;
+    public void setViewBoardType(String viewBoardType) {
+        this.viewBoardType = viewBoardType == null ? null : viewBoardType.trim();
     }
 
     public String getViewBoardQuantities() {
